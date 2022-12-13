@@ -30,11 +30,13 @@ var userActi
             cambiarSection(".operacion", ".login")
         }else{
             alert('Contraseña invalida')
+            document.querySelector("#inputPassword").value = ""
         }
     });
 //Sección de menu operaciones
     document.querySelector("#btnConsulSaldo").addEventListener("click", function(){
         cambiarSection(".consultarSaldo", ".operacion")
+        //Modulo consultar saldo
         var saldotemp=finByName(userActi).dinero
         document.querySelector("#saldo").innerHTML=saldotemp
     });
@@ -44,21 +46,35 @@ var userActi
     document.querySelector("#btnRetiMonto").addEventListener("click", function(){
         cambiarSection(".retirarMonto", ".operacion")
     });
-//Sección de consultar saldo
+//Boton Volver
     document.querySelector("#btnReturn").addEventListener("click", function(){
         cambiarSection(".operacion", ".consultarSaldo")
     });
+    document.querySelector("#btnReturnIng").addEventListener("click", function(){
+        cambiarSection(".operacion",".ingresarSaldo")
+    });
+    document.querySelector("#btnReturnRet").addEventListener("click", function(){
+        cambiarSection(".operacion",".retirarMonto")
+    });
+
 //Boton Ingresar Saldo
     document.querySelector("#btnIngresarMonto").addEventListener("click", function(){
         var saldoIng=parseFloat(document.querySelector("#saldoIngresado").value)
-        document.querySelector("#mostarSaldo").innerHTML=saldoIng
         var saldotemp=parseFloat(finByName(userActi).dinero)
         var sumaSaldos=saldoIng+saldotemp
-        if(sumaSaldos<valorMax){
-            document.querySelector("#mostarNuevoSaldo").innerHTML=sumaSaldos
-            nuevoSaldo(sumaSaldos)
+        if(saldoIng>0){
+            if(sumaSaldos<valorMax){
+                document.querySelector("#mostarSaldo").innerHTML=saldoIng
+                document.querySelector("#mostarNuevoSaldo").innerHTML=sumaSaldos
+                nuevoSaldo(sumaSaldos)
+                document.querySelector("#saldoIngresado").value = ""
+            }else{
+                alert("No puede exceder los $"+valorMax+", ingrese otro monto")
+                document.querySelector("#saldoIngresado").value = ""
+            }
         }else{
-            alert("No puede exceder los $"+valorMax+", ingrese otro monto")
+            alert("Valor no valido, ingrese otro valor")
+            document.querySelector("#saldoIngresado").value = ""
         }
     });
 //Boton Retirar dinero
@@ -70,14 +86,13 @@ var userActi
         if(sumaSaldos>valorMin){
             document.querySelector("#mostrarNueSalRe").innerHTML=sumaSaldos
             nuevoSaldo(sumaSaldos)
+            document.querySelector("#saldoRetirado").value = ""
         }else{
             alert("No puede dejar en la cuenta menos de $"+valorMin)
+            document.querySelector("#saldoRetirado").value = ""
         }
     });
-//Boton Salir
-document.querySelector("#btnExit").addEventListener("click", function(){
-    location.reload()
-});
+
 
 function cambiarSection(mostar, ocultar){
     let mostrarSection=document.querySelector(mostar)
@@ -104,4 +119,7 @@ function nuevoSaldo(sumaSaldos){
     for(var i=0;i<saldos.length;i++){
         saldos[i].dinero=nuSal
     }
+}
+function goHome(){
+    window.location.reload();
 }

@@ -38,15 +38,15 @@
                 <button id="btnIngreMonto" >Ingresar Monto</button>
                 <button id="btnRetiMonto" >Retirar Monto</button>
             </div>
-            <button id="btnExit" >Salir</button>
+            <button id="btnExit" onclick="goHome()">Salir</button>
         </section>
         <section class="consultarSaldo" style="display: none;">
             <div class="col-md-6 col-sm-6 col-xs-6 col-xl-6 col-lg-6">
                 <h4>Su saldo es de $<b id="saldo"></b></h4>        
             </div>
             <div class="botones">
-                <button id="btnReturn" >Volver</button>
-                <button id="btnExit" >Salir</button>
+                <button id="btnReturn">Volver</button>
+                <button id="btnExit" onclick="goHome()">Salir</button>
             </div>
         </section>
         <section class="ingresarSaldo" style="display: none;">
@@ -56,12 +56,12 @@
                 <button id="btnIngresarMonto">Ingresar Monto</button>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6 col-xl-6 col-lg-6">
-                <p>Monto Ingresado:<b id="mostarSaldo"></b></p>
-                <p>Nuevo Saldo: <b id="mostarNuevoSaldo"></b></p>
+                <h4>Monto Ingresado: $<b id="mostarSaldo"></b></h4>
+                <h4>Nuevo Saldo: $ <b id="mostarNuevoSaldo"></b></h4>
             </div>
             <div class="botones">
-                <button id="btnReturn" >Volver</button>
-                <button id="btnExit" >Salir</button>
+                <button id="btnReturnIng" >Volver</button>
+                <button id="btnExit" onclick="goHome()">Salir</button>
             </div>
         </section>
         <section class="retirarMonto" style="display: none;">
@@ -71,12 +71,12 @@
                 <button id="btnRetirarMonto">Retirar Monto</button>
             </div>
             <div class="col-md-6">
-                <p>Monto a retirar: <b id="mostrarSaldoRet"></b></p>
-                <p>Nuevo Saldo: <b id="mostrarNueSalRe"></b></p>
+                <h4>Monto a retirar: $ <b id="mostrarSaldoRet"></b></h4>
+                <h4>Nuevo Saldo: $<b id="mostrarNueSalRe"></b></h4>
             </div>
             <div class="botones">
-                <button id="btnReturn" >Volver</button>
-                <button id="btnExit" >Salir</button>
+                <button id="btnReturnRet">Volver</button>
+                <button id="btnExit" onclick="goHome()">Salir</button>
             </div>
         </section>
     </main>
