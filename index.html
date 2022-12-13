@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h2>Welcome <span id="user"></span></h2>
+    </header>
+    <main>
+        <section class="principal" >
+            <h1>Seleccione un usuario</h1>
+            <div class="col-md-8 col-xl-8 col-lg-8">
+                <button id="btnUserMari">Mari</button>
+                <button id="btnUserGera">Gera</button>
+                <button id="btnUserMaui">Maui</button>
+            </div>
+        </section>
+        <section class="login" style="display: none;">
+            <div>
+                <h3 class="h3 mb-3 font-weight-normal">Ingrese su Contraseña <b id="loUser"></b></h3>
+                <label  class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" id="btnSignin"style="background-color: rgb(15, 49, 142);" type="submit">Sign in</button>
+            </div>
+            <div class="botones">
+                <button id="btnExit" >Salir</button>
+            </div>
+        </section>
+        <section class="operacion" style="display: none;">
+            <div class="col-md-8 col-xl-8 col-lg-8">
+                <button id="btnConsulSaldo" >Consultar Saldo</button>
+                <button id="btnIngreMonto" >Ingresar Monto</button>
+                <button id="btnRetiMonto" >Retirar Monto</button>
+            </div>
+            <button id="btnExit" >Salir</button>
+        </section>
+        <section class="consultarSaldo" style="display: none;">
+            <div class="col-md-6 col-sm-6 col-xs-6 col-xl-6 col-lg-6">
+                <h4>Su saldo es de $<b id="saldo"></b></h4>        
+            </div>
+            <div class="botones">
+                <button id="btnReturn" >Volver</button>
+                <button id="btnExit" >Salir</button>
+            </div>
+        </section>
+        <section class="ingresarSaldo" style="display: none;">
+            <div class="col-md-8">
+                <h3>Monto a Ingresar</h3>
+                <input type="number" id="saldoIngresado">
+                <button id="btnIngresarMonto">Ingresar Monto</button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-xl-6 col-lg-6">
+                <p>Monto Ingresado:<b id="mostarSaldo"></b></p>
+                <p>Nuevo Saldo: <b id="mostarNuevoSaldo"></b></p>
+            </div>
+            <div class="botones">
+                <button id="btnReturn" >Volver</button>
+                <button id="btnExit" >Salir</button>
+            </div>
+        </section>
+        <section class="retirarMonto" style="display: none;">
+            <div class="col-md-8">
+                <h3>Monto a Retirar</h3>
+                <input type="number" id="saldoRetirado">
+                <button id="btnRetirarMonto">Retirar Monto</button>
+            </div>
+            <div class="col-md-6">
+                <p>Monto a retirar: <b id="mostrarSaldoRet"></b></p>
+                <p>Nuevo Saldo: <b id="mostrarNueSalRe"></b></p>
+            </div>
+            <div class="botones">
+                <button id="btnReturn" >Volver</button>
+                <button id="btnExit" >Salir</button>
+            </div>
+        </section>
+    </main>
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>
